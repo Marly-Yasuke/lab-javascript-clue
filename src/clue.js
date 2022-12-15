@@ -55,8 +55,9 @@ const suspectsArray = [
     firstName: "Jack",
     lastName: "Mustard",
     occupation: "Retired Football player",
-    description:  "He is a former football player who tries to get by on his former glory",
-      age: 62,
+    description:
+      "He is a former football player who tries to get by on his former glory",
+    age: 62,
     image:
       "https://static.independent.co.uk/s3fs-public/thumbnails/image/2016/07/04/08/unspecified-3.jpg",
     color: "yellow",
@@ -67,37 +68,50 @@ const suspectsArray = [
 
 const roomsArray = [
   {
-    name: "Dining Romm"
-  },{
-    name: "Conservatory"
-  },{
-    name: "Kitchen"
-  },{
-    name: "Study"
-  },{
-    name: "Library"
-  },{
-    name: "Billiard Room"
-  },{
-name: "Ballroom"
+    name: "Dining Romm",
   },
   {
-    name: "Hall"
-  },{
-    name: "Spa"
-  },{
-    name: "Living Room"
-  },{
-    name: "Observatory"
-  },{
-    name: "Theatre"
-  },{
-    name: "Ghest House"
-  },{
-    name: "Patio"
-  },{
-    name: "Lounge"
-  }
+    name: "Conservatory",
+  },
+  {
+    name: "Kitchen",
+  },
+  {
+    name: "Study",
+  },
+  {
+    name: "Library",
+  },
+  {
+    name: "Billiard Room",
+  },
+  {
+    name: "Ballroom",
+  },
+  {
+    name: "Hall",
+  },
+  {
+    name: "Spa",
+  },
+  {
+    name: "Living Room",
+  },
+  {
+    name: "Observatory",
+  },
+  {
+    name: "Theatre",
+  },
+  {
+    name: "Ghest House",
+  },
+  {
+    name: "Patio",
+  },
+  {
+    name: "Lounge",
+  },
 ];
 
 // Weapons Array
@@ -144,20 +158,27 @@ const weaponsArray = [
 // ITERATION 2
 
 function selectRandom(array) {
-  return array[Math.floor(Math.random()*array.length)]
+  return array[Math.floor(Math.random() * array.length)];
 }
 
 function pickMystery() {
   let result = {
     suspect: selectRandom(suspectsArray),
     room: selectRandom(roomsArray),
-    weapon: selectRandom(weaponsArray)
-
-  }
-  return result
+    weapon: selectRandom(weaponsArray),
+  };
+  return result;
 }
+
+let final = {
+  suspect: selectRandom(suspectsArray),
+  weapon: selectRandom(weaponsArray),
+  room: selectRandom(roomsArray),
+};
 
 // ITERATION 3
-function revealMystery(){
-  return ""
+function revealMystery(final) {
+  return `${final.suspect.firstName} ${final.suspect.lastName} killed Mr. Boddy using ${final.weapon.name} in the ${final.room.name}!`;
 }
+
+console.log(revealMystery(final));
